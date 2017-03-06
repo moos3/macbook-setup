@@ -110,9 +110,6 @@
 - name: Allow text selection in the Quick Look window
   shell: defaults write com.apple.finder QLEnableTextSelection -bool true
 
-- name: Disable the sudden motion sensor as it’s not useful for SSDs
-  shell: pmset -a sms 0
-
 - name: Disable the crash reporter
   shell: defaults write com.apple.CrashReporter DialogType -string "none"
 

@@ -12,9 +12,6 @@
     - macosx-setup
 
   vars_prompt:
-    - name: "githubuser"
-      prompt: "Enter your github username"
+    - name: "githubtoken"
+      prompt: "Enter your github peronsal access token"
       private: no
-    - name: "githubpassword"
-      prompt: "Enter your github password"
-      private: yes

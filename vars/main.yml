@@ -41,6 +41,8 @@ homebrew_installed_packages:
   - tree
   - unrar
   - terraform
+  - readline
+  - nmap
 
 
 homebrew_taps:
@@ -59,6 +61,7 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - viscosity
   - google-chrome
   - firefox
   - vagrant
