@@ -9,8 +9,6 @@ homebrew_installed_packages:
   - dockutil
   - zsh
   - tmux
-  - homebrew/php/php71
-  - homebrew/php/php71-mcrypt
   - phpunit
   - tree
   - npm
@@ -117,7 +115,6 @@ dockitems_to_persist:
   - name: HipChat
     path: /Applications/HipChat.app
     pos: 8
-
 
 npm_packages:
   - grunt

@@ -9,3 +9,4 @@
   roles:
     - geerlingguy.homebrew
     - dotfiles
+    - macosx-setup
