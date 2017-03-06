@@ -62,7 +62,7 @@
 - name: Save Screenshots to desktop
   shell: defaults write com.apple.screencapture location -string "$HOME/Desktop"
 
-- name: Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+- name: Save screenshots in PNG format (other options BMP, GIF, JPG, PDF, TIFF)
   shell: defaults write com.apple.screencapture type -string "png"
 
 - name: Finder: show hidden files by default
