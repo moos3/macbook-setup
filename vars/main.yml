@@ -9,13 +9,9 @@ homebrew_installed_packages:
   - dockutil
   - zsh
   - tmux
-  - mercurial
-  - phpmd
-  - php-code-sniffer
-  - php-cs-fixer
-  - phpunit
   - homebrew/php/php71
   - homebrew/php/php71-mcrypt
+  - phpunit
   - tree
   - npm
   - yarn
