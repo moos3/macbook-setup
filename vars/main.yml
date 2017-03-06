@@ -1,0 +1,142 @@
+---
+homebrew_install_path: /usr/local/homebrew
+homebrew_installed_packages:
+  - ansible
+  - docker
+  - git
+  - ssh-copy-id
+  - wget
+  - dockutil
+  - zsh
+  - tmux
+  - mercurial
+  - phpmd
+  - php-code-sniffer
+  - php-cs-fixer
+  - phpunit
+  - homebrew/php/php71
+  - homebrew/php/php71-mcrypt
+  - tree
+  - npm
+  - yarn
+  - docker-compose
+  - docker-machine-nfs
+  - composer
+  - git-extras
+  - python
+  - python3
+  - pyenv-virtualenv
+  - pyenv
+  - openssl
+  - mcrypt
+  - httpie
+  - gpg-agent
+  - gnupg2
+  - git-crypt
+  - mobile-shell
+  - xz
+  - socat
+  - watch
+  - rbenv
+  - ruby-build
+  - pkg-config
+  - coreutils
+  - autoconf
+  - pv
+  - sqlite
+  - tree
+
+
+homebrew_taps:
+  - caskroom/cask
+  - caskroom/versions
+  - homebrew/php
+  - homebrew/apache
+  - homebrew/bundle
+  - homebrew/completions
+  - homebrew/core
+  - homebrew/dupes
+  - homebrew/fuse
+  - homebrew/php
+  - homebrew/versions
+
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - google-chrome
+  - firefox
+  - vagrant
+  - virtualbox
+  - slack
+  - atom
+  - android-file-transfer
+  - spotify
+  - hipchat
+  - parallels-desktop
+  - gpgtools
+  - osxfuse
+  - iterm2
+  - dash
+  - the-unarchiver
+  - sequel-pro
+  - postgres
+
+dockitems_to_remove:
+  - Launchpad
+  - Mail
+  - Safari
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - iTunes
+  - iBooks
+  - App Store
+  - System Preferences
+  - Calendar
+  - Siri
+
+dockitems_to_persist:
+  - name: Google Chrome
+    path: "/Applications/Google Chrome.app"
+    pos: 1
+  - name: Firefox
+    path: "/Applications/Firefox.app"
+    pos: 2
+  - name: Slack
+    path: /Applications/Slack.app
+    pos: 4
+  - name: VirtualBox
+    path: /Applications/VirtualBox.app
+    pos: 5
+  - name: Terminal
+    path: /Applications/Utilities/Terminal.app
+    pos: 6
+  - name: Spotify
+    path: /Applications/Spotify.app
+    pos: 7
+  - name: HipChat
+    path: /Applications/HipChat.app
+    pos: 8
+
+
+npm_packages:
+  - grunt
+  - bower
+  - sass
+  - webpack
+  - yo
+  - generator-webapp
+
+pip_packages:
+  - virtualenv
+  - virtualenvwrapper
+  - virtualenv-clone
+  - boto
+  - boto3
+  - aws
+  - awscli
+  - Fabric

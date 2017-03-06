@@ -1,0 +1,48 @@
+---
+- name: Clone dotfiles
+  git: repo=https://github.com/moos3/dotfiles.git dest=/Users/moos3/dotfiles recursive=yes update=no
+
+- name: Get current Terminal profile.
+  shell: defaults read com.apple.Terminal 'Default Window Settings'
+  register: terminal_theme
+  changed_when: false
+
+- name: Ensure custom Terminal profile is added.
+  shell: open files/Solarized-Dark.terminal
+  changed_when: false
+  when: "'Solarized-Dark' not in terminal_theme.stdout"
+
+- name: Ensure custom Terminal profile is set as default.
+  shell: "{{ item }}"
+  with_items:
+    - defaults write com.apple.Terminal 'Default Window Settings' -string 'Solarized-Dark'
+    - defaults write com.apple.Terminal 'Startup Window Settings' -string 'Solarized-Dark'
+  changed_when: false
+  when: "'Solarized Dark ansi' not in terminal_theme.stdout"
+
+- name: Set zsh as shell
+  shell: defaults write com.apple.Terminal 'Shell' -string '/bin/zsh'
+
+- name: Remove all crap from Dock
+  shell: dockutil --remove '{{ item }}'
+  ignore_errors: true
+  with_items: "{{ dockitems_to_remove  }}"
+
+- name: Check if items in dock exist
+  shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
+  with_items: "{{ dockitems_to_persist }}"
+
+- name: Fix order
+  shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
+  with_items: "{{ dockitems_to_persist }}"
+
+- name: Set datetime zone
+  lineinfile: dest=/usr/local/etc/php/7.0/php.ini line="date.timezone=Americas/New_York"
+
+- name: Install npm packages
+  npm:  name={{ item }} global=yes
+  with_items: "{{ npm_packages }}"
+
+- name: Install pip packages
+  pip: name={{ item }}
+  with_items: "{{ pip_packages }}"
