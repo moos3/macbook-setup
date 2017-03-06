@@ -39,6 +39,8 @@ homebrew_installed_packages:
   - pv
   - sqlite
   - tree
+  - unrar
+  - terraform
 
 
 homebrew_taps:

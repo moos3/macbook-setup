@@ -1,6 +1,9 @@
 ---
+- name: Install oh-my-zsh
+  shell: "curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh"
+
 - name: Clone dotfiles
-  git: repo=https://github.com/moos3/dotfiles.git dest=/Users/moos3/dotfiles recursive=yes update=no
+  git: repo=https://{{githubuser}}:{{githubpassword}}@github.com/moos3/dotfiles.git dest=/Users/moos3/dotfiles recursive=yes update=no
 
 - name: Get current Terminal profile.
   shell: defaults read com.apple.Terminal 'Default Window Settings'
