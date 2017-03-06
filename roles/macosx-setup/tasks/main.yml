@@ -32,10 +32,10 @@
 - name: Use System Print Dialog in Google Chrome
   shell: defaults write com.google.Chrome DisablePrintPreview -bool true
 
-- name: Menu Bar: Disable Transparency
+- name: Menu Bar Disable Transparency
   shell: defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
-- name: Menu bar: show remaining battery time
+- name: Menu bar show remaining battery time
   shell: defaults write com.apple.menuextra.battery ShowPercent -string "NO" && defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
 - name: Exapnd Save panel by defaults
