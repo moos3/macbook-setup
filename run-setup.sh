@@ -13,7 +13,7 @@ sudo pip install ansible
 echo "making provision directory"
 mkdir .provision && cd provision
 echo "pulling down provisioning tools"
-git clone git@github.com:moos3/macbook-setup.git
+git clone https://github.com/moos3/macbook-setup.git
 cd macbook-setup
 echo "installing requirements"
 ansible-galaxy install -r requirements.yml

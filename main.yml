@@ -7,6 +7,8 @@
     dock_tile_size: 45
     dock_large_tile_size: 50
     dock_auto_hide: true
+    dotfiles_github_repo: moos3/dotfiles.git
+    username: moose
 
   vars_files:
     - vars/main.yml
