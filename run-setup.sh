@@ -11,7 +11,7 @@ sudo easy_install pip
 echo "installing ansible"
 sudo pip install ansible
 echo "making provision directory"
-mkdir .provision && cd provision
+mkdir .provision && cd .provision
 echo "pulling down provisioning tools"
 git clone https://github.com/moos3/macbook-setup.git
 cd macbook-setup
