@@ -36,7 +36,7 @@
   shell: defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
 - name: Menu bar show remaining battery time
-  shell: {{ item }}
+  shell: "{{ item }}"
   with_items:
     - defaults write com.apple.menuextra.battery ShowPercent -string "NO"
     - defaults write com.apple.menuextra.battery ShowTime -string "YES"
@@ -120,7 +120,7 @@
   shell: launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 - name: Require password immediately after sleep or screen saver begins
-  shell: {{ item }}
+  shell: "{{ item }}"
   with_items:
    - defaults write com.apple.screensaver askForPassword -int 1
    - defaults write com.apple.screensaver askForPasswordDelay -int 0
