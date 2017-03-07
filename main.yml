@@ -17,8 +17,3 @@
     - geerlingguy.homebrew
     - dotfiles
     - macosx-setup
-
-  vars_prompt:
-    - name: "githubtoken"
-      prompt: "Enter your github peronsal access token"
-      private: no
