@@ -3,17 +3,11 @@
   include_vars: "tokens.yml"
   no_log: true
 
-- name: tokens | Copy secret Tokens
-  copy:
-    githubtoken="{{ item.github }}"
-  with_dict: tokens
-  no_log: true
-
 - name: Install oh-my-zsh
   shell: "curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh"
 
 - name: Clone dotfiles
-  git: repo=https://{{ githubtoken }}@github.com/{{ dotfiles_github_repo }} dest=/Users/{{ username }}/dotfiles recursive=yes update=no
+  git: repo=https://{{ tokens.github }}@github.com/{{ dotfiles_github_repo }} dest=/Users/{{ username }}/dotfiles recursive=yes update=no
 
 - name: Get current Terminal profile.
   shell: defaults read com.apple.Terminal 'Default Window Settings'
