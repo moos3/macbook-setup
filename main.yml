@@ -3,6 +3,11 @@
   user: moose
   connection: local
 
+  vars:
+    dock_tile_size: 45
+    dock_large_tile_size: 50
+    dock_auto_hide: true
+
   vars_files:
     - vars/main.yml
 

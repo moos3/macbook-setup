@@ -36,7 +36,10 @@
   shell: defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
 - name: Menu bar show remaining battery time
-  shell: defaults write com.apple.menuextra.battery ShowPercent -string "NO" && defaults write com.apple.menuextra.battery ShowTime -string "YES"
+  shell: {{item}}
+  with_items:
+    - defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+    - defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
 - name: Exapnd Save panel by defaults
   shell: defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -87,13 +90,13 @@
   shell: defaults write com.apple.dock launchanim -bool true
 
 - name: Set dock tile size
-  shell: defaults write com.apple.dock tilesize -int 60
+  shell: defaults write com.apple.dock tilesize -int {{dock_tile_size}}
 
 - name: set dock tile large size
-  shell: defaults write com.apple.dock largesize -int 85
+  shell: defaults write com.apple.dock largesize -int {{dock_large_tile_size}}
 
 - name: autohide dock
-  shell: defaults write com.apple.dock autohide -bool true
+  shell: defaults write com.apple.dock autohide -bool {{dock_auto_hide}}
 
 - name: remove delay
   shell: defaults write com.apple.dock autohide-delay -float 0
@@ -117,7 +120,10 @@
   shell: launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 - name: Require password immediately after sleep or screen saver begins
-  shell: defaults write com.apple.screensaver askForPassword -int 1 && defaults write com.apple.screensaver askForPasswordDelay -int 0
+  shell: {{item}}
+  with_items:
+   - defaults write com.apple.screensaver askForPassword -int 1
+   - defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 - name: Don’t display the annoying prompt when quitting iTerm
   shell: defaults write com.googlecode.iterm2 PromptOnQuit -bool false
