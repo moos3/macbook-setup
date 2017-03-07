@@ -1,4 +1,7 @@
 #!/bin/sh
+echo "Enter ansible vault password: "
+read password_vault
+echo $password_vault >> ~/.vault_pass.txt
 echo "Running Provisioning"
 echo "##########################"
 echo "\n"
@@ -18,9 +21,6 @@ cd macbook-setup
 echo "installing requirements"
 ansible-galaxy install -r requirements.yml
 echo "running provisioning"
-echo "Enter ansible vault password: "
-read password_vault
-echo $password_vault >> ~/.vault_pass.txt
 ansible-playbook -i inventory -K --vault-password-file ~/.vault_pass.txt  main.yml
 rm ~/.vault_pass.txt
 echo "########################"

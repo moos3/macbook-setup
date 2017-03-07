@@ -1,6 +1,6 @@
 ---
 - name: Tokens | Load Token secrets
-  include_vars: "vault.yml"
+  include_vars: "tokens.yml"
   no_log: true
 
 - name: tokens | Copy secret Tokens
@@ -8,7 +8,7 @@
     githubtoken="{{ item.github }}"
   with_dict: tokens
   no_log: true
-  
+
 - name: Install oh-my-zsh
   shell: "curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh"
 
