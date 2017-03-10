@@ -9,6 +9,7 @@
     dock_auto_hide: true
     dotfiles_github_repo: moos3/dotfiles.git
     username: moose
+    gnupg_github_repo: moos3/gnupg.git
 
   vars_files:
     - vars/main.yml
@@ -17,3 +18,4 @@
     - geerlingguy.homebrew
     - dotfiles
     - macosx-setup
+    - gnupg
