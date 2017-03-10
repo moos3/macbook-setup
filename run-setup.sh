@@ -10,7 +10,7 @@ case $ret in
   0)
     echo "$(cat $data)" > ~/.vault_pass2.txt;;
   1)
-    echo "Cancelled!"
+    echo "Cancelled!";;
   255)
     [ -s $data ] && cat $data || echo "ESC pressed";;
 esac
