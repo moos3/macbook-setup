@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo "Enter ansible vault password: "
 read password_vault
 echo $password_vault >> ~/.vault_pass.txt
