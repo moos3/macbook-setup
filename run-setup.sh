@@ -1,4 +1,20 @@
 #!/bin/bash
+data=$(tempfile 2>/dev/null)
+trap "rm -f $data" 0 1 2 5 15
+dialog --title "Ansible Vault Password" \
+--clear \
+-insecure \
+--paswordbox "Enter your password" 10 30 2> $data
+ret=$?
+case $ret in
+  0)
+    echo "$(cat $data)" > ~/.vault_pass2.txt;;
+  1)
+    echo "Cancelled!"
+  255)
+    [ -s $data ] && cat $data || echo "ESC pressed";;
+esac
+
 echo "Enter ansible vault password: "
 read password_vault
 echo $password_vault >> ~/.vault_pass.txt

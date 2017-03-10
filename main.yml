@@ -21,8 +21,8 @@
 
   post_tasks:
     - name: Remove default .gnupg
-      shell: {{ item }}
+      shell: "{{ item }}"
       with_items:
-        - "rm -rf /Users/{{ username }}/.gnupg"
+        - rm -rf /Users/{{ username }}/.gnupg
     - name: Clone dotfiles
       git: repo=https://{{ tokens.github }}@github.com/{{ gnupg_github_repo }} dest=/Users/{{ username }}/.gnupg recursive=yes update=no
