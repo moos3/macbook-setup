@@ -53,3 +53,6 @@
 - name: Install pip packages
   pip: name={{ item }}
   with_items: "{{ pip_packages }}"
+
+- name: dotfiles installer
+  shell: cd /Users/{{ username }}/dotfiles && ./install
