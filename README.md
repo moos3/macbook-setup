@@ -2,4 +2,4 @@
 
 For installation:
 
-    $ bash <(curl https://goo.gl/rnvitl)
+    $ bash <(curl -fsSL https://goo.gl/rnvitl)
