@@ -7,7 +7,7 @@
   shell: "curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh"
 
 - name: Clone dotfiles
-  git: repo=https://{{ tokens.github }}@github.com/{{ dotfiles_github_repo }} dest=/Users/{{ username }}/dotfiles recursive=yes update=no
+  git: repo=https://{{ tokens.github }}@github.com/{{ dotfiles_github_repo }} dest=/Users/{{ username }}/.dotfiles recursive=yes update=no
 
 - name: Get current Terminal profile.
   shell: defaults read com.apple.Terminal 'Default Window Settings'
@@ -55,4 +55,4 @@
   with_items: "{{ pip_packages }}"
 
 - name: dotfiles installer
-  shell: cd /Users/{{ username }}/dotfiles && ./install
+  shell: cd /Users/{{ username }}/.dotfiles && ./install
