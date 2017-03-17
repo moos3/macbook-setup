@@ -54,5 +54,8 @@
   pip: name={{ item }}
   with_items: "{{ pip_packages }}"
 
+- name: Removing .zshrc
+  shell: rm /Users/{{ username }}/.zshrc
+
 - name: dotfiles installer
   shell: cd /Users/{{ username }}/.dotfiles && ./install
