@@ -64,4 +64,4 @@
   shell: sudo rm -fr /Users/{{ username }}/.gnupg
 
 - name: Setting up GNUPG
-  git: repo=https://{{ tokens.github }}@github.com/{{ gnupg_github_repo }} dest=/Users/{{ username }}/.gnupg recursive=yes update=no
+  git: repo=https://{{ tokens.github }}@github.com/{{ gnupg_github_repo }} dest=/Users/{{ username }}/.gnupg2 recursive=yes update=yes
