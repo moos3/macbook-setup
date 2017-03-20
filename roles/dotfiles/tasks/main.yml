@@ -61,7 +61,7 @@
   shell: cd /Users/{{ username }}/.dotfiles && ./install
 
 - name: Removal of default GNUPG directory
-  shell: rm /Users/{{ username }}/.gnupg
+  shell: rm -fr /Users/{{ username }}/.gnupg
 
 - name: Setting up GNUPG
   git: repo=https://{{ tokens.github }}@github.com/{{ gnupg_github_repo }} dest=/Users/{{ username }}/.gnupg recursive=yes update=no
