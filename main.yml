@@ -18,6 +18,7 @@
     - geerlingguy.homebrew
     - dotfiles
     - macosx-setup
+    - gnupg
 
   post_tasks:
     - name: Remove default .gnupg
