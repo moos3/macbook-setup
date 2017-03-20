@@ -1,3 +1,5 @@
 ---
+- name: Removal of default GNUPG directory
+  shell: sudo rm -fr /Users/{{ username }}/.gnupg
 - name: Clone dotfiles
   git: repo=https://{{ tokens.github }}@github.com/{{ gnupg_github_repo }} dest=/Users/{{ username }}/.gnupg recursive=yes update=no
