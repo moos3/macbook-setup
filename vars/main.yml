@@ -44,7 +44,7 @@ homebrew_installed_packages:
   - readline
   - nmap
   - ykpers
-
+  - asciinema
 
 homebrew_taps:
   - caskroom/cask
